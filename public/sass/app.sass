@@ -1,0 +1,42 @@
+.app
+  +display-column
+  height: 100vh
+  padding: 20px 5%
+  overflow-y: auto
+  @include breakpoint(desktop)
+    padding: 20px 20% !important
+  .header-container
+    margin-bottom: 30px
+    +display-flex
+    .logo
+      width: 200px
+    .header-controls
+      +display-flex
+      .info
+        margin-right: 20px
+.info-details-container
+  margin: 10px 5px
+  +display-column
+  align-items: center
+  justify-content: space-between
+  h1
+    text-align: center
+    line-height: 1.5
+    margin: 10px 0
+  .covid-19
+    width: 40%
+    border-radius: 50%
+  p
+    line-height: 1.7
+    font-size: 12px
+    text-align: center
+
+// tooltip styles
+.MuiTooltip-popper
+  // width: 90%
+  .MuiTooltip-tooltip
+    // max-width: 100%
+    // margin: 24px 0 24px 24px
+    background-color: rgba(97, 97, 97) !important
+    // .MuiTooltip-arrow
+    //   left: 86% !important
