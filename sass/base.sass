@@ -1,0 +1,99 @@
+// ------------- color variables -------------
+$white: #ffffff
+$black: #000000
+$dark-grey: #707070
+
+$day-highlighter: #F6F8FC
+$night-highlighter: #404040
+
+$info-icon-color: #AAAAAA
+$day-theme-icon-color: #FFD500
+
+$infected: #0066ff
+$recovered: #00af06
+$deaths: #d10000
+ 
+
+// ------------- themes -------------
+.day
+  color: $dark-grey
+  background: $white
+.day-highlighter
+  color: $dark-grey
+  background: $day-highlighter
+
+.night
+  color: $white
+  background: $black
+.night-highlighter
+  color: $white
+  background: $night-highlighter
+
+.infected
+  color: $infected
+.deaths
+  color: $deaths
+.recovered
+  color: $recovered
+  
+
+// ------------- base styles -------------
+*
+  margin: 0
+  padding: 0
+  font-family: Roboto, sans-serif
+  &::-webkit-scrollbar
+    display: none
+
+a
+  line-height: 0
+  text-decoration: none
+
+=display-flex
+  display: flex
+  align-items: center 
+  justify-content: space-between
+
+=display-column
+  display: flex
+  flex-direction: column
+
+=display-grid
+  display: grid
+  grid-column-gap: 10px
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+
+=highlighter
+  width: 100%
+  border: none
+  padding: 10px
+  border-radius: 5px
+
+=text-ellipsis
+  min-width: auto
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+// --------------- Responsive Mixin --------------- 
+@mixin breakpoint($device)
+  @if $device == small-mobile
+    @media only screen and (max-width: 425px)
+      @content
+  @if $device == mobile
+    @media only screen and (max-width: 750px)
+      @content
+  @else if $device == iPad
+    @media only screen and (min-width: 768px) and (max-width: 1024px)
+      @content
+  @else if $device == iPadPro
+    @media only screen and (min-width: 834px) and (max-width: 1200px)
+      @content
+  @else if $device == desktop
+    @media only screen and (min-width: 1200px) and (max-width: 1800px)
+      @content
+  @else if $device == bigDesktop
+    @media only screen and (min-width: 1800px)
+      @content
+  @else
+    // @warn "Breakpoint mixin supports: xs, sm, md, lg"
