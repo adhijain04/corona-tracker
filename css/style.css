@@ -56,6 +56,11 @@ a {
     padding: 20px 20% !important;
   }
 }
+@media only screen and (min-width: 1800px) {
+  .app {
+    padding: 20px 20% !important;
+  }
+}
 .app .header-container {
   margin-bottom: 30px;
   display: flex;
